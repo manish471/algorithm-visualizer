@@ -1,0 +1,14 @@
+# node stuff
+/node_modules
+/build
+.npm
+.node_repl_history
+.lock-wscript
+logs
+*.log
+npm-debug.log*
+
+# Compiled files
+dist/
+
+debug.log
