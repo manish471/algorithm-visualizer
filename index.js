@@ -23,7 +23,14 @@ const corsOptions = {
 };
   
 app.use(cors(corsOptions));
-app.use(helmet());
+app.use(
+    helmet.contentSecurityPolicy({
+        useDefaults: true,
+        directives: {
+          "img-src": ["'self'", "https: data:"]
+        }
+      })
+);
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
