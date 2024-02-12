@@ -1,19 +1,42 @@
-const nodemon = require('nodemon');
-const path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cookieSession = require('cookie-session');
+const cookieParser = require('cookie-parser');
+const cors = require("cors");
+const helmet = require('helmet');
 
-nodemon({
-  execMap: {
-    js: 'node'
-  },
-  script: path.join(__dirname, 'server/server'),
-  ignore: [],
-  watch: process.env.NODE_ENV !== 'production' ? ['server/*'] : false,
-  ext: 'js'
-})
-.on('restart', function() {
-  console.log('Server restarted!');
-})
-.on('exit', function () {
-    console.log('Shutting down server');
-    process.exit();
+const routes = require("./server/routes");
+const passport = require('./server/config/passport');
+const db = require('./server/db/db');
+const config = require('./server/config/config');
+
+
+const port = process.env.PORT || 3001;
+
+const app = express();
+
+const corsOptions = {
+    origin:(origin, cb) => {
+        return cb(null, true);
+      },
+    credentials: true
+};
+  
+app.use(cors(corsOptions));
+app.use(helmet());
+
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+app.use(cookieSession(config.cookieSession));
+app.use(cookieParser());
+
+//Initialize passport auth
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Connect all routes to the server
+app.use(routes);
+
+app.listen(port,()=>{
+    console.log(`server is running at ${port}`);
 });
