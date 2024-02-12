@@ -77,7 +77,7 @@ passport.use(
 //passport for github auth
 passport.use(
     new GithubStrategy({
-        callbackURL:'/api/auth/test',
+        callbackURL:'/api/auth/github/callback',
         clientID:config.githubClientID,
         clientSecret:config.githubClientSecret,
         scope: ['user:email'],
