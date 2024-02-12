@@ -1,4 +1,5 @@
 const routes = require("express").Router();
+const express = require('express');
 
 //Importing routes from api
 const auth = require('./api/auth');
