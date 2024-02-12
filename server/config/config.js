@@ -1,7 +1,7 @@
 const config = {
     db_local: 'mongodb://localhost:27017/algorithms-visualizer',
     db_cloud:'mongodb+srv://avuser:avdbpwd@algorithm-visualizer.k17ulhi.mongodb.net/algorithm-visualizer?retryWrites=true&w=majority',
-    frontEndServer:'https://algorithm-visualizer-livid.vercel.app',
+    frontEndServer:'https://algovis-five.vercel.app',
     googleClientID:'920749689036-avuoaed91ebqp60oj58fa0stmgtv0khk.apps.googleusercontent.com',
     googleClientSecret:'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',
     githubClientID:'82cf8a0540501bb4d44f',
