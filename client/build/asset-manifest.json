@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b60f12dc.css",
+    "main.js": "/static/js/main.d9c3530c.js",
+    "static/media/py_logo.png": "/static/media/py_logo.89345deebdbf50031df3.png",
+    "static/media/google.png": "/static/media/google.cadee8cdb0c0afb1a713.png",
+    "static/media/github.png": "/static/media/github.44eee0c4a6c25b0d7347.png",
+    "index.html": "/index.html",
+    "main.b60f12dc.css.map": "/static/css/main.b60f12dc.css.map",
+    "main.d9c3530c.js.map": "/static/js/main.d9c3530c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b60f12dc.css",
+    "static/js/main.d9c3530c.js"
+  ]
+}
