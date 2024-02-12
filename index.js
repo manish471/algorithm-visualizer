@@ -30,6 +30,7 @@ app.use(
           "img-src": ["'self'", "https: data:"],
           "script-src-elem":["'self'", "https: data:"],
           "script-src":["'self'", "https: data:"],
+          "worker-src":["'self'", "https: data:"],
         }
       })
 );
