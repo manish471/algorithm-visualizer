@@ -4,8 +4,8 @@ const config = {
     frontEndServer:'https://algorithm-visualizer-livid.vercel.app',
     googleClientID:'945383315679-16s0g0par0bn36au8mbver0jemv959od.apps.googleusercontent.com',
     googleClientSecret:'zTlp6qLOF-fb1C1f-7gMLrJe',
-    githubClientID:'868a43b1ba3fc3820a75',
-    githubClientSecret:'7bba18fe95a87e0f0c29297231da6fdfe347236f'
+    githubClientID:'82cf8a0540501bb4d44f',
+    githubClientSecret:'fbcf18f24515d701170323121c844428e1a43572'
 }
 
 config.cookieSession = {
