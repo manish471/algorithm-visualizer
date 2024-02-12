@@ -41,9 +41,9 @@ routes.use( (err, req, res, next) => {
 
 if (process.env.NODE_ENV === "production") {
   const path = require("path");
-  routes.use(express.static(path.resolve(__dirname, 'client', 'build')));
+  routes.use(express.static(path.resolve(__dirname, './../client', 'build')));
   routes.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'),function (err) {
+      res.sendFile(path.resolve(__dirname, './../client', 'build', 'index.html'),function (err) {
           if(err) {
               res.status(500).send(err)
           }
