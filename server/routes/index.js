@@ -34,9 +34,21 @@ routes.use( (err, req, res, next) => {
   res.status(500).json({error:err.name, message: err.message});
 });
 
-routes.get('/', (req, res) => {
-return res.status(200).json({ message: 'Connected!',user:req.user });
-});
+// routes.get('/', (req, res) => {
+// return res.status(200).json({ message: 'Connected!',user:req.user });
+// });
+
+if (process.env.NODE_ENV === "production") {
+  const path = require("path");
+  app.use(express.static(path.resolve(__dirname, 'client', 'build')));
+  app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'),function (err) {
+          if(err) {
+              res.status(500).send(err)
+          }
+      });
+  })
+}
 
 // Assume 404 since no middleware responded
 routes.use( (req, res) => {
