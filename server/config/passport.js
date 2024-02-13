@@ -76,7 +76,7 @@ passport.use(
 //passport for github auth
 passport.use(
     new GithubStrategy({
-        callbackURL:'/api/auth/github/callback',
+        callbackURL:'https://codeeasyviz.onrender.com/api/auth/github/callback',
         clientID:process.env.GITHUB_CLIENT_ID,
         clientSecret:process.env.GITHUB_CLIENT_SECRET,
         scope: ['user:email'],
