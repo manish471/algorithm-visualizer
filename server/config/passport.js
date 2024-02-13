@@ -2,7 +2,6 @@ const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 const GithubStrategy = require("passport-github2");
 const mongoose = require("mongoose");
-const config = require('./config');
 
 const User = mongoose.model("User");
 const Code = mongoose.model("Code");
@@ -19,8 +18,8 @@ passport.deserializeUser((id,done)=>{
 passport.use(
     new GoogleStrategy({
         callbackURL:'/api/auth/google/callback',
-        clientID:config.googleClientID,
-        clientSecret:config.googleClientSecret,
+        clientID:process.env.GOOGLE_CLIENT_ID,
+        clientSecret:process.env.GOOGLE_CLIENT_SECRET,
         scope: ["profile", "email"],
         proxy: true,
     },
@@ -78,8 +77,8 @@ passport.use(
 passport.use(
     new GithubStrategy({
         callbackURL:'/api/auth/github/callback',
-        clientID:config.githubClientID,
-        clientSecret:config.githubClientSecret,
+        clientID:process.env.GITHUB_CLIENT_ID,
+        clientSecret:process.env.GITHUB_CLIENT_SECRET,
         scope: ['user:email'],
     },
     (accessToken, refreshToken, profile, done)=>{

@@ -1,8 +1,6 @@
 var mongoose = require('mongoose');
-const config = require('../config/config');
 
-let mongoUrl = config.db_cloud;
-// let mongoUrl = config.db_cloud;
+let mongoUrl = process.env.DB_CLOUD;
 
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);

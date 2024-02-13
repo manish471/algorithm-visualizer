@@ -23,6 +23,7 @@
     "cookie-parser": "^1.4.5",
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.3",
     "express": "^4.17.1",
     "helmet": "^4.2.0",
     "lodash": "^4.17.20",

@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const config = require("../../config/config");
 const fs = require('fs');
 const { spawn } = require("child_process");
 const User = require('../../models/User');

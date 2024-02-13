@@ -6,6 +6,8 @@
 logs
 *.log
 npm-debug.log*
+.env
+.env.test
 
 # Compiled files
 dist/
