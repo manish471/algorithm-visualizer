@@ -1,4 +1,7 @@
 var mongoose = require('mongoose');
+if (process.env.NODE_ENV !== 'production') { 
+      require('dotenv').config(); 
+} 
 
 let mongoUrl = process.env.DB_CLOUD;
 

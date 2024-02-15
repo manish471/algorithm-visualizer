@@ -10,6 +10,16 @@ const { spawn } = require("child_process");
 //Transpile code and send ouput
 router.get('/js',(req,res,next)=>{
 
+    let { code_id } = req.query;
+
+    if (!req.user) {
+        req.user = {
+            googleID: 'public',
+            githubID: 'public',
+            code_js: code_id?code_id:'65cd0acdb4db858f5855d6a5'
+        }
+    }
+
     Code.findOne({$or: [{ googleID: req.user.googleID }, { githubID: req.user.githubID }],_id:req.user.code_js})
     .then(data=>{
         

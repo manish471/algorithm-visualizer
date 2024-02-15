@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== 'production') { 
+      require('dotenv').config(); 
+} 
 const vm = require('vm')
 const Runner = require('./runner')
 const util = require('util')

@@ -1,10 +1,13 @@
+if (process.env.NODE_ENV !== 'production') { 
+      require('dotenv').config(); 
+} 
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const cookieParser = require('cookie-parser');
 const cors = require("cors");
 const helmet = require('helmet');
-
 const routes = require("./server/routes");
 const passport = require('./server/config/passport');
 const db = require('./server/db/db');
