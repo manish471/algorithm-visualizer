@@ -24,7 +24,7 @@ router.get('/google',passport.authenticate('google'));
 router.get('/google/callback',passport.authenticate('google'),(req,res,next)=>{
     try{
         if(!req.user) throw(new Error("Unable to Authenticate with Google Server"))
-        res.redirect(process.env.FRONTEND_WEB_URL);
+        res.redirect(process.env.FRONTEND_WEB_URL+"visualizer");
     }catch(e){
         next(e)
     }
