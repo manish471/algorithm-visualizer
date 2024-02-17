@@ -79,7 +79,7 @@ passport.use(
 //passport for github auth
 passport.use(
     new GithubStrategy({
-        callbackURL:'https://algoviseasy.vercel.app/api/auth/github/callback',
+        callbackURL:'https://algovis.onrender.com/api/auth/github/callback',
         clientID:process.env.GITHUB_CLIENT_ID,
         clientSecret:process.env.GITHUB_CLIENT_SECRET,
         scope: ['user:email'],
