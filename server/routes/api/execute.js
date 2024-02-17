@@ -12,7 +12,7 @@ router.post('/',async (req,res,next)=>{
     const {code,language} = req.body;
     
     let cmd = "node";
-    let fileName = "test.js"
+    let fileName = "/tmp/test.js"
 
     if(language === "Python"){
         cmd = "python"
